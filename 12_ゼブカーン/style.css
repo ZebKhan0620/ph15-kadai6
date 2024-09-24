@@ -1,0 +1,519 @@
+:root {
+    --primary-color: #28a745;
+    --primary-hover-color: #218838;
+    --primary-active-color: #1e7e34;
+    --font-color: #333;
+    --background-color: #f4f4f4;
+    --header-bg-color: #333;
+    --footer-bg-color: #3a3a3a;
+    --text-light: #fff;
+    --border-radius: 5px;
+    --transition-ease: 0.3s ease;
+    --shadow-focus: 0 0 5px rgba(40, 167, 69, 0.5);
+    --padding-button: 12px 25px;
+    --padding-input: 12px;
+    --font-size-default: 1rem;
+    --font-family: 'Arial', sans-serif;
+}
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--font-color);
+    animation: fadeInBody 0.8s ease-in-out;
+}
+
+/* Fade-in animation for body */
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header Styling */
+header {
+    background-color: var(--header-bg-color);
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: slideDownHeader 1s ease;
+}
+
+/* Header links */
+header a {
+    color: var(--text-light);
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color var(--transition-ease);
+}
+
+header a:hover {
+    color: #f1c40f;
+    text-decoration: underline;
+}
+
+/* Slide down animation for header */
+@keyframes slideDownHeader {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--footer-bg-color);
+    color: var(--text-light);
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    animation: fadeInFooter 1s ease-in;
+}
+
+footer a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color var(--transition-ease);
+}
+
+footer a:hover {
+    color: #bbb;
+}
+
+/* Fade-in animation for footer */
+@keyframes fadeInFooter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInContainer 1.2s ease-in-out;
+}
+
+/* Fade-in animation for container */
+@keyframes fadeInContainer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+li {
+    color: #e70505;
+}
+/* Form Styling */
+form {
+    display: block;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: var(--font-size-default);
+    color: var(--font-color);
+}
+
+/* Input fields */
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], select, textarea {
+    width: 100%;
+    padding: var(--padding-input);
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-default);
+    transition: border-color var(--transition-ease), box-shadow var(--transition-ease);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-focus);
+}
+
+/* Radio and Checkbox */
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+input[type="radio"]:hover, input[type="checkbox"]:hover {
+    transform: scale(1.3);
+}
+
+/* General Submit Button Styling */
+input[type="submit"] {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    border: 2px solid #218838;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Hover Effect for Submit Buttons */
+input[type="submit"]:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active Effect for Submit Buttons */
+input[type="submit"]:active {
+    background-color: #1e7e34;
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus State for Accessibility */
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+}
+
+/* Fade-in Animation */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the fade-in animation to submit buttons */
+input[type="submit"] {
+    animation: fadeInButton 1s ease-in-out;
+}
+
+
+/* Buttons with hover and animation */
+button, input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--padding-button);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-default);
+    cursor: pointer;
+    transition: background-color var(--transition-ease), transform 0.2s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.05);
+}
+
+button:active, input[type="submit"]:active {
+    background-color: var(--primary-active-color);
+    transform: scale(0.95);
+}
+
+button:focus, input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px var(--shadow-focus);
+}
+
+
+/* Container to center the logout button */
+.logout-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Red Logout Button */
+.logout-button {
+    display: inline-block;
+    background-color: #e70505;
+    color: white;
+    padding: var(--padding-button);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-default);
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #e70505;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-ease), transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative;
+    animation: fadeInButton 1s ease-in-out;
+}
+
+
+/* Hover effect: brighten the red color and increase shadow */
+.logout-button:hover {
+    background-color: #e70505;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Active effect: darker red with reduced shadow */
+.logout-button:active {
+    background-color: #e70505;
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(220, 9, 9, 0.5);
+}
+
+/* Fade-in animation */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Success Container */
+.success-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Success Button */
+.success-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: var(--padding-button);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-default);
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #388E3C;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-ease), transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative;
+    animation: fadeInButton 1s ease-in-out;
+}
+
+/* Hover effect: brighten the green color and increase shadow */
+.success-button:hover {
+    background-color: #45A049;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Active effect: darker green with reduced shadow */
+.success-button:active {
+    background-color: #388E3C;
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.success-button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+/* Fade-in animation */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* General Submit Button Styling */
+.success-button1 {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    border: 2px solid #218838;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+/* Hover Effect for Submit Buttons */
+.success-button1:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active Effect for Submit Buttons */
+.success-button1:active {
+    background-color: #1e7e34;
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Focus State for Accessibility */
+.success-button1:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+}
+/* Fade-in Animation */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the fade-in animation to submit buttons */
+.success-button1 {
+    animation: fadeInButton 1s ease-in-out;
+}
+
+
+/* Buttons with hover and animation */
+button, .success-button1 {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--padding-button);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-default);
+    cursor: pointer;
+    transition: background-color var(--transition-ease), transform 0.2s ease;
+}
+
+button:hover, .success-button1:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.05);
+}
+
+button:active, .success-button1:active {
+    background-color: var(--primary-active-color);
+    transform: scale(0.95);
+}
+
+button:focus, .success-button1:focus {
+    outline: none;
+    box-shadow: 0 0 8px var(--shadow-focus);
+}
+
+
+
+
+/* Tooltip Styling */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 160px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: var(--border-radius);
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity var(--transition-ease), transform var(--transition-ease);
+    transform: translateY(10px);
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Success and Error Messages */
+.success-message, .error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.success-message {
+    color: var(--primary-color);
+}
+
+.error-message {
+    color: var(--danger-color);
+}
+
+/* Hover effect on error messages */
+.error-message:hover {
+    color: var(--danger-hover-color);
+    transform: scale(1.05);
+}
+
+/* Remember Me Checkbox Styling */
+.remember-me-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.remember-me-container input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.3);
+}
+
+.remember-me-container label {
+    font-size: var(--font-size-default);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInError {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
